@@ -255,42 +255,42 @@
         }
 
         .project-image {
-    height: 180px;
-    background-color: #f5f5f5; /* Changed from primary color to light background */
-    color: var(--primary-color); /* Changed text color to primary color */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    overflow: hidden;
-    position: relative;
-}
+            height: 180px;
+            background-color: #f5f5f5; /* Changed from primary color to light background */
+            color: var(--primary-color); /* Changed text color to primary color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            overflow: hidden;
+            position: relative;
+        }
 
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Changed from cover to contain to show full image */
-    padding: 20px; /* Add padding around the image */
-    background-color: white; /* White background for better visibility */
-}
-/* Style for icon-based project images */
-.project-image .fas, .project-image .fab {
-    color: var(--primary-color);
-    background-color: rgba(255,255,255,0.9);
-    padding: 20px;
-    border-radius: 8px;
-}
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Changed from cover to contain to show full image */
+            padding: 20px; /* Add padding around the image */
+            background-color: white; /* White background for better visibility */
+        }
+        /* Style for icon-based project images */
+        .project-image .fas, .project-image .fab {
+            color: var(--primary-color);
+            background-color: rgba(255,255,255,0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
 
-/* Add hover effect for both images and icons */
-.project-image img, .project-image .fas, .project-image .fab {
-    transition: transform 0.3s ease;
-}
+        /* Add hover effect for both images and icons */
+        .project-image img, .project-image .fas, .project-image .fab {
+            transition: transform 0.3s ease;
+        }
 
-.project-card:hover .project-image img,
-.project-card:hover .project-image .fas,
-.project-card:hover .project-image .fab {
-    transform: scale(1.05);
-}
+        .project-card:hover .project-image img,
+        .project-card:hover .project-image .fas,
+        .project-card:hover .project-image .fab {
+            transform: scale(1.05);
+        }
 
         .project-content {
             padding: 1.5rem;
@@ -339,6 +339,11 @@
 
         .in-progress-badge {
             background-color: #ff9800;
+            color: white;
+        }
+
+        .completed-badge {
+            background-color: #4CAF50;
             color: white;
         }
 
@@ -649,6 +654,26 @@
             <h2>Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
+                    <div class="status-badge in-progress-badge">In Development</div>
+                    <div class="project-image">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Classroom Finder</h3>
+                        <p>Web application for finding the available time creneaux to add school session by teachers depending on the emploi du temps</p>
+                        <div class="technologies">
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Spring Data</span>
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">RESTful API</span>
+                            <span class="tech-tag">UML</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="status-badge in-progress-badge">In Development</div>
                     <div class="project-image">
                         <img src="neobrain_icon.png" alt="">
                     </div>
@@ -656,15 +681,19 @@
                         <h3>Smart Mini Commercial ERP</h3>
                         <p>Desktop platform for full control over enterprise data, operations and staff with sentiment analysis capabilities.</p>
                         <div class="technologies">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">BeautifulSoup</span>
-                            <span class="tech-tag">Apache Airflow</span>
-                            <span class="tech-tag">PostgreSQL</span>
                             <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Spring Data</span>
+                            <span class="tech-tag">Java Swing API</span>
+                            <span class="tech-tag">ReactJS</span>
+                            <span class="tech-tag">RESTful API</span>
+                            <span class="tech-tag">Oracle SE 21c</span>
+                            <span class="tech-tag">UML</span>
+                            <span class="tech-tag">Docker</span>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
+                    <div class="status-badge in-progress-badge">In Development</div>
                     <div class="project-image">
                         <i class="fas fa-university"></i>
                     </div>
@@ -681,6 +710,7 @@
                     </div>
                 </div>
                 <div class="project-card">
+                    <div class="status-badge in-progress-badge">In Development</div>
                     <div class="project-image">
                         <i class="fas fa-hotel"></i>
                     </div>
@@ -695,6 +725,7 @@
                     </div>
                 </div>
                 <div class="project-card">
+                    <div class="status-badge completed-badge">Completed</div>
                     <div class="project-image">
                         <i class="fas fa-project-diagram"></i>
                     </div>
@@ -707,6 +738,7 @@
                     </div>
                 </div>
                 <div class="project-card">
+                    <div class="status-badge completed-badge">Completed</div>
                     <div class="project-image">
                         <img src="onee.png" alt="">
                     </div>
@@ -723,6 +755,7 @@
                     </div>
                 </div>
                 <div class="project-card">
+                    <div class="status-badge completed-badge">Completed</div>
                     <div class="project-image">
                         <img src="men.jpg" alt="">
                     </div>
