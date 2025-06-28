@@ -1,110 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zakaria Douih - Software & Data Engineer</title>
-    <link rel="icon" href="favicon.ico" />
-    <meta name="description" content="Portfolio of Zakaria Douih - Software Developer & Data Engineer based in Morocco. Passionate about backend architecture, data pipelines, and building impactful software solutions." />
-    <meta property="og:title" content="Zakaria Douih - Portfolio" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/preview.jpg" />
-    <meta property="og:url" content="https://yourdomain.com" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  </head>
-  <body class="bg-gray-50 text-gray-800">
-    <header class="bg-white shadow sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 class="text-xl font-bold text-blue-600">Zakaria Douih</h1>
-        <nav class="space-x-6">
-          <a href="#about" class="hover:text-blue-500 font-medium">About</a>
-          <a href="#skills" class="hover:text-blue-500 font-medium">Skills</a>
-          <a href="#projects" class="hover:text-blue-500 font-medium">Projects</a>
-          <a href="#contact" class="hover:text-blue-500 font-medium">Contact</a>
-        </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zakaria Douih – Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+  <header class="bg-blue-600 text-white p-6">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Zakaria Douih</h1>
+      <nav class="space-x-4">
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#skills" class="hover:underline">Skills</a>
+        <a href="#projects" class="hover:underline">Projects</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-12">
+    <section id="about" class="mb-16">
+      <h2 class="text-3xl font-bold mb-4">About Me</h2>
+      <p class="text-lg leading-relaxed">I'm a Data & Software Engineering student at INSEA, Morocco. I enjoy building full-stack applications, designing scalable data pipelines, and modeling real-world systems using strong foundations in UML and system architecture.</p>
+    </section>
+
+    <section id="skills" class="mb-16">
+      <h2 class="text-3xl font-bold mb-4">Skills</h2>
+      <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 text-lg">
+        <li>Spring Boot, Spring Data, Spring Security</li>
+        <li>Java (JEE, Swing), PHP (OOP & Procedural)</li>
+        <li>Python (Pandas, Airflow, NLP)</li>
+        <li>Angular, React (Basics)</li>
+        <li>Oracle, PostgreSQL, MySQL</li>
+        <li>Apache Airflow, DBT, Looker Studio</li>
+        <li>UML, 2TUP, Git, CI/CD, Docker</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="mb-16">
+      <h2 class="text-3xl font-bold mb-8">Projects</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-semibold">🧠 NeoBrain ERP</h3>
+          <p>ERP with CRM, HRM, and SRM modules + sentiment analytics. Full-stack project with Spring Boot, Java Swing, and PostgreSQL.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">🏫 Classroom Finder</h3>
+          <p>Java/Spring Boot + Angular project for locating free classrooms based on INSEA schedules. Uses PostgreSQL, secured with Spring Security.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">📊 Bank Reviews Analysis</h3>
+          <p>ETL pipeline with Apache Airflow and DBT for processing Moroccan bank reviews. Data visualization with Looker Studio and Google Maps API.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">🏨 Hotel Management System</h3>
+          <p>Java JEE + MySQL MVC-based system for handling hotel bookings and staff processes. Admin dashboard and local app included.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">⚙️ AFN Determination Tool</h3>
+          <p>Java Swing tool for converting NFAs to DFAs using subset construction, with graphical simulation interface and state validation.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">🧾 ONEE Archive Manager</h3>
+          <p>PHP + MySQL archive web manager with statistical data views and mass entry features for ONEE-Branche Eau.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">🤝 Partnership Manager</h3>
+          <p>Local app for the Moroccan Ministry of Education to manage school-association partnerships (PHP + MySQL, OOP routing).</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">📱 Portfolio Android App</h3>
+          <p>Mini Android project in Java to view student courses and notes. CRUD app using SQLite and a basic interface.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">📡 IoT Energy Monitoring System</h3>
+          <p>Arduino Uno + Python + Power BI system to track and visualize energy usage in three-room simulation.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">🏛 ANCFCC System Modeling</h3>
+          <p>UML + 2TUP project to design land title and cadastral services in Morocco using secure architecture with Spring Boot + JWT + Angular.</p>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-24 text-center">
-        <div class="max-w-3xl mx-auto">
-          <h2 class="text-4xl font-bold mb-4">Hi, I'm Zakaria 👋</h2>
-          <p class="text-xl">Junior Software Architect & Data Engineering Enthusiast from Morocco</p>
-          <p class="mt-4">INSEA student | Spring Boot, Airflow, DBT, PostgreSQL, Oracle, Java, Python</p>
-          <div class="mt-6 space-x-4">
-            <a href="#projects" class="bg-white text-blue-600 px-6 py-2 rounded shadow hover:bg-gray-100 font-semibold">View Projects</a>
-            <a href="mailto:douihzakaria@gmail.com" class="text-white underline hover:text-gray-300">Contact Me</a>
-          </div>
-        </div>
-      </section>
+    <section id="contact">
+      <h2 class="text-3xl font-bold mb-4">Contact</h2>
+      <p class="mb-2">📧 Email: <a class="text-blue-600 underline" href="mailto:douihzakaria@gmail.com">douihzakaria@gmail.com</a></p>
+      <p class="mb-2">📞 Phone: +212 6 96 82 26 04</p>
+      <p class="mb-2">🔗 GitHub: <a class="text-blue-600 underline" href="https://github.com/TheZikoHunter">TheZikoHunter</a></p>
+      <p>🔗 LinkedIn: <a class="text-blue-600 underline" href="https://linkedin.com/in/zakaria-douih">zakaria-douih</a></p>
+    </section>
+  </main>
 
-      <section id="about" class="py-16">
-        <div class="max-w-4xl mx-auto px-4">
-          <h3 class="text-3xl font-bold text-center mb-6">About Me</h3>
-          <p class="text-lg text-gray-700 leading-relaxed">
-            I'm a final-year engineering student at INSEA, specializing in Data & Software Engineering. I enjoy solving real-world problems by building smart, scalable backend systems and automating data workflows. I’ve worked with public institutions like ONEE and MEN, as well as on research and enterprise-level academic projects including archive management systems, ERP tools, and customer feedback analysis platforms.
-          </p>
-        </div>
-      </section>
-
-      <section id="skills" class="bg-gray-100 py-16">
-        <div class="max-w-5xl mx-auto px-4">
-          <h3 class="text-3xl font-bold text-center mb-8">Skills & Tools</h3>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div><i class="fab fa-java text-3xl text-blue-600"></i><p>Java / Spring Boot</p></div>
-            <div><i class="fab fa-python text-3xl text-green-600"></i><p>Python / Airflow</p></div>
-            <div><i class="fas fa-database text-3xl text-purple-600"></i><p>PostgreSQL / Oracle</p></div>
-            <div><i class="fas fa-project-diagram text-3xl text-yellow-500"></i><p>UML / Software Design</p></div>
-            <div><i class="fas fa-terminal text-3xl text-gray-700"></i><p>Linux / Bash</p></div>
-            <div><i class="fab fa-git-alt text-3xl text-orange-600"></i><p>Git / GitHub</p></div>
-            <div><i class="fas fa-network-wired text-3xl text-pink-600"></i><p>Networking</p></div>
-            <div><i class="fab fa-docker text-3xl text-blue-500"></i><p>Docker</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" class="py-16">
-        <div class="max-w-6xl mx-auto px-4">
-          <h3 class="text-3xl font-bold text-center mb-10">Highlighted Projects</h3>
-          <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
-              <h4 class="text-xl font-semibold mb-2">Classroom Finder</h4>
-              <p class="text-gray-700 mb-3">Helps users find available rooms using real-time scheduling. Built with Spring Boot, Angular, PostgreSQL.</p>
-              <div class="flex flex-wrap gap-2 text-sm text-gray-600">
-                <span class="bg-blue-100 px-2 py-1 rounded">Spring Boot</span>
-                <span class="bg-blue-100 px-2 py-1 rounded">Angular</span>
-                <span class="bg-blue-100 px-2 py-1 rounded">PostgreSQL</span>
-              </div>
-            </div>
-            <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
-              <h4 class="text-xl font-semibold mb-2">Bank Review Analyzer</h4>
-              <p class="text-gray-700 mb-3">NLP-based project to rank bank agencies based on customer sentiment. Stack: Python, Airflow, Looker Studio.</p>
-              <div class="flex flex-wrap gap-2 text-sm text-gray-600">
-                <span class="bg-green-100 px-2 py-1 rounded">Python</span>
-                <span class="bg-green-100 px-2 py-1 rounded">Airflow</span>
-                <span class="bg-green-100 px-2 py-1 rounded">Looker Studio</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="bg-blue-50 py-16">
-        <div class="max-w-3xl mx-auto px-4 text-center">
-          <h3 class="text-3xl font-bold mb-6">Let’s Connect</h3>
-          <p class="mb-6 text-gray-700">I’m currently looking for internship opportunities (July–August 2025). Let’s discuss how I can help your team.</p>
-          <div class="flex justify-center space-x-6">
-            <a href="mailto:douihzakaria@gmail.com" class="text-blue-600 hover:underline">douihzakaria@gmail.com</a>
-            <a href="https://linkedin.com/in/zakaria-douih" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a>
-            <a href="https://github.com/TheZikoHunter" target="_blank" class="text-blue-600 hover:underline">GitHub</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="bg-gray-900 text-gray-300 text-center py-6 text-sm">
-      &copy; 2025 Zakaria Douih. All rights reserved.
-    </footer>
-  </body>
+  <footer class="bg-gray-100 text-center py-6 text-gray-500">
+    © 2025 Zakaria Douih — All rights reserved.
+  </footer>
+</body>
 </html>
