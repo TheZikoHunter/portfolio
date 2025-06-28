@@ -6,62 +6,545 @@
   <title>Zakaria Douih – Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
   <style>
-    body { font-family: 'Fira Code', monospace; }
+    * {
+      box-sizing: border-box;
+    }
+    
+    body { 
+      font-family: 'Inter', sans-serif; 
+      line-height: 1.6;
+      background: #fafafa;
+      color: #1f2937;
+    }
+    
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Professional card styling */
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e5e7eb;
+      transition: all 0.2s ease;
+    }
+    
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-1px);
+    }
+    
+    /* Professional button styling */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
+    
+    .btn-primary:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+    }
+    
+    .btn-secondary {
+      background: white;
+      color: #374151;
+      border-color: #d1d5db;
+    }
+    
+    .btn-secondary:hover {
+      background: #f9fafb;
+      border-color: #9ca3af;
+    }
+    
+    /* Professional skill tags */
+    .skill-tag {
+      display: inline-block;
+      background: #f3f4f6;
+      color: #374151;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin: 0.25rem 0.25rem 0.25rem 0;
+      border: 1px solid #e5e7eb;
+    }
+    
+    /* Project card enhancements */
+    .project-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    
+    .project-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+      border-color: #d1d5db;
+    }
+    
+    .project-title {
+      color: #1f2937;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .project-description {
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+    
+    .tech-tag {
+      display: inline-block;
+      background: #eff6ff;
+      color: #1d4ed8;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin: 0.25rem 0.25rem 0.25rem 0;
+    }
+    
+    /* Professional navigation */
+    .nav-link {
+      color: #6b7280;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+    
+    .nav-link:hover {
+      color: #2563eb;
+      border-bottom-color: #2563eb;
+    }
+    
+    /* Section headers */
+    .section-header {
+      color: #1f2937;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .project-card:hover {
+        transform: none;
+      }
+    }
+    
+    /* Professional modal */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+    
+    .modal-content {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .modal-header {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 1rem;
+    }
+    
+    /* Fade in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
-<body class="bg-[#0f172a] text-gray-100">
-  <main class="max-w-4xl mx-auto px-6 py-12">
-    <header class="mb-12">
-      <h1 class="text-4xl font-bold text-teal-400">Zakaria Douih</h1>
-      <p class="text-gray-400">Data Engineer & Software Developer – Rabat, Morocco</p>
-      <div class="mt-2 text-sm">
-        <a href="mailto:douihzakaria@gmail.com" class="text-blue-400 hover:underline">douihzakaria@gmail.com</a>
-        <span class="mx-2">|</span>
-        <a href="https://github.com/TheZikoHunter" class="text-blue-400 hover:underline">GitHub</a>
-        <span class="mx-2">|</span>
-        <a href="https://linkedin.com/in/zakaria-douih" class="text-blue-400 hover:underline">LinkedIn</a>
+<body>
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <div class="font-semibold text-xl text-gray-900">Zakaria Douih</div>
+        <div class="hidden md:flex space-x-6">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-6 py-8">
+    <!-- Header -->
+    <header class="text-center mb-12 fade-in">
+      <div class="card p-8">
+        <h1 class="text-4xl font-bold text-gray-900 mb-2">Zakaria Douih</h1>
+        <p class="text-xl text-gray-600 mb-4">Data Engineer & Software Developer</p>
+        <p class="text-gray-500 mb-6">📍 Rabat, Morocco</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="mailto:douihzakaria@gmail.com" class="btn btn-primary">
+            📧 Email Me
+          </a>
+          <a href="https://github.com/TheZikoHunter" class="btn btn-secondary">
+            GitHub Profile
+          </a>
+          <a href="https://linkedin.com/in/zakaria-douih" class="btn btn-secondary">
+            LinkedIn
+          </a>
+        </div>
       </div>
     </header>
 
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-cyan-400 mb-2">🧬 About</h2>
-      <p class="text-gray-300 leading-relaxed">INSEA engineering student specialized in Data & Software Engineering. I build scalable web apps, automate data workflows, and model real-world systems using Spring, Airflow, Python, UML, and more. I'm passionate about backend architecture and data pipelines.</p>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-cyan-400 mb-2">🛠️ Stack</h2>
-      <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm text-gray-300">
-        <li>Java (Spring Boot, JEE, Swing)</li>
-        <li>Python (Pandas, Airflow)</li>
-        <li>PHP (Procedural & OOP)</li>
-        <li>Angular, React (basic)</li>
-        <li>PostgreSQL, Oracle, MySQL</li>
-        <li>Docker, Git, CI/CD</li>
-        <li>UML, 2TUP, Looker Studio</li>
-      </ul>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">📂 Projects</h2>
-      <div class="space-y-6">
-        <div><strong class="text-teal-300">NeoBrain ERP</strong> — Full-stack enterprise system with CRM/HRM/SRM, analytics, Spring Boot, Swing, PostgreSQL.</div>
-        <div><strong class="text-teal-300">Classroom Finder</strong> — Room availability app for teachers. Java + Angular + PostgreSQL.</div>
-        <div><strong class="text-teal-300">Bank Reviews ETL</strong> — Airflow + Python NLP + DBT + Looker for customer satisfaction insights.</div>
-        <div><strong class="text-teal-300">Hotel Management</strong> — Java JEE + MySQL with full MVC logic and UML modeling.</div>
-        <div><strong class="text-teal-300">AFN → DFA Tool</strong> — Java Swing GUI to determinize finite automata via subset construction.</div>
-        <div><strong class="text-teal-300">ONEE Archive Manager</strong> — PHP/MySQL archive simulation with mass insert & stats.</div>
-        <div><strong class="text-teal-300">MEN Partnership App</strong> — Simple OOP PHP app for school-association links with MySQL.</div>
-        <div><strong class="text-teal-300">Portfolio Android App</strong> — Student app (CRUD) using Java + SQLite.</div>
-        <div><strong class="text-teal-300">IoT Energy Monitor</strong> — Arduino + Python + Power BI usage dashboard for smart rooms.</div>
-        <div><strong class="text-teal-300">ANCFCC System Design</strong> — UML + 2TUP modeling + Spring + JWT architecture.</div>
+    <!-- About -->
+    <section id="about" class="mb-12 fade-in">
+      <h2 class="section-header">About Me</h2>
+      <div class="card p-6">
+        <p class="text-gray-700 text-lg leading-relaxed">
+          I'm an INSEA engineering student specializing in Data & Software Engineering. I have extensive experience 
+          building scalable web applications, automating data workflows, and modeling complex real-world systems. 
+          My expertise spans across backend development, data pipeline architecture, and enterprise system design 
+          using modern technologies like Spring Boot, Apache Airflow, and cloud platforms.
+        </p>
       </div>
     </section>
 
-    <footer class="pt-8 text-xs text-gray-500 border-t border-gray-700">
-      <p>Made with ❤️ by Zakaria Douih — INSEA 2023–2026</p>
+    <!-- Skills -->
+    <section id="skills" class="mb-12 fade-in">
+      <h2 class="section-header">Technical Skills</h2>
+      <div class="card p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-3">Programming Languages</h3>
+            <div class="flex flex-wrap">
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">SQL</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-3">Frameworks & Tools</h3>
+            <div class="flex flex-wrap">
+              <span class="skill-tag">Spring Boot</span>
+              <span class="skill-tag">Angular</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Apache Airflow</span>
+              <span class="skill-tag">Docker</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-3">Databases</h3>
+            <div class="flex flex-wrap">
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">Oracle</span>
+              <span class="skill-tag">SQLite</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-3">Other Technologies</h3>
+            <div class="flex flex-wrap">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">CI/CD</span>
+              <span class="skill-tag">UML</span>
+              <span class="skill-tag">Looker Studio</span>
+              <span class="skill-tag">Power BI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="mb-12 fade-in">
+      <h2 class="section-header">Featured Projects</h2>
+      
+      <div class="project-card" data-project="neobrain">
+        <div class="flex justify-between items-start mb-3">
+          <h3 class="project-title">NeoBrain ERP System</h3>
+          <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Enterprise</span>
+        </div>
+        <p class="project-description">
+          Comprehensive enterprise resource planning system featuring CRM, HRM, and SRM modules with advanced 
+          analytics dashboard and business intelligence capabilities. Built with Spring Boot backend and desktop GUI.
+        </p>
+        <div class="flex flex-wrap">
+          <span class="tech-tag">Spring Boot</span>
+          <span class="tech-tag">Java Swing</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">Business Intelligence</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-project="classroom">
+        <div class="flex justify-between items-start mb-3">
+          <h3 class="project-title">Classroom Finder Application</h3>
+          <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Web Application</span>
+        </div>
+        <p class="project-description">
+          Smart classroom availability system for educational institutions featuring real-time room scheduling, 
+          teacher management, and automated conflict resolution with an intuitive web interface.
+        </p>
+        <div class="flex flex-wrap">
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">Angular</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">REST API</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-project="etl">
+        <div class="flex justify-between items-start mb-3">
+          <h3 class="project-title">Bank Reviews ETL Pipeline</h3>
+          <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Data Engineering</span>
+        </div>
+        <p class="project-description">
+          Advanced ETL pipeline processing customer reviews with NLP sentiment analysis, automated data transformation 
+          using DBT, and comprehensive business intelligence reporting through Looker Studio.
+        </p>
+        <div class="flex flex-wrap">
+          <span class="tech-tag">Apache Airflow</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">DBT</span>
+          <span class="tech-tag">Looker Studio</span>
+          <span class="tech-tag">NLP</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-project="hotel">
+        <div class="flex justify-between items-start mb-3">
+          <h3 class="project-title">Hotel Management System</h3>
+          <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded">Enterprise</span>
+        </div>
+        <p class="project-description">
+          Full-featured hotel management system with reservation handling, customer management, and billing automation. 
+          Designed using UML modeling and implemented with Java EE following MVC architecture patterns.
+        </p>
+        <div class="flex flex-wrap">
+          <span class="tech-tag">Java EE</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">MVC</span>
+          <span class="tech-tag">UML</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-project="iot">
+        <div class="flex justify-between items-start mb-3">
+          <h3 class="project-title">IoT Energy Monitoring System</h3>
+          <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">IoT</span>
+        </div>
+        <p class="project-description">
+          Smart building energy monitoring solution using Arduino sensors for data collection, Python for real-time 
+          processing, and Power BI for comprehensive energy usage analytics and optimization recommendations.
+        </p>
+        <div class="flex flex-wrap">
+          <span class="tech-tag">Arduino</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Power BI</span>
+          <span class="tech-tag">IoT</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mb-12 fade-in">
+      <h2 class="section-header">Get In Touch</h2>
+      <div class="card p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-3">Contact Information</h3>
+            <div class="space-y-2">
+              <p class="text-gray-600">📧 douihzakaria@gmail.com</p>
+              <p class="text-gray-600">📍 Rabat, Morocco</p>
+              <p class="text-gray-600">🎓 INSEA Engineering Student</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-3">Professional Links</h3>
+            <div class="space-y-2">
+              <a href="https://github.com/TheZikoHunter" class="block text-blue-600 hover:text-blue-800">
+                GitHub Profile →
+              </a>
+              <a href="https://linkedin.com/in/zakaria-douih" class="block text-blue-600 hover:text-blue-800">
+                LinkedIn Profile →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 border-t border-gray-200">
+      <p class="text-gray-600">© 2025 Zakaria Douih. All rights reserved.</p>
+      <p class="text-gray-500 text-sm mt-2">INSEA 2023–2026 • Data & Software Engineering</p>
     </footer>
   </main>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Fade in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Project card modal functionality
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', function() {
+        const projectData = {
+          neobrain: {
+            title: "NeoBrain ERP System",
+            description: "A comprehensive enterprise resource planning system designed for modern businesses. Features include customer relationship management, human resource management, supplier relationship management, and advanced analytics dashboard with business intelligence capabilities.",
+            technologies: ["Spring Boot", "Java Swing", "PostgreSQL", "JPA/Hibernate", "Maven"],
+            features: ["Multi-module architecture", "Role-based access control", "Real-time analytics", "Report generation", "Data visualization"]
+          },
+          classroom: {
+            title: "Classroom Finder Application",
+            description: "An intelligent classroom scheduling and availability system built for educational institutions. The system provides real-time room availability, conflict resolution, and comprehensive teacher management features.",
+            technologies: ["Java", "Angular", "PostgreSQL", "REST API", "TypeScript"],
+            features: ["Real-time scheduling", "Conflict detection", "Teacher dashboard", "Room management", "Automated notifications"]
+          },
+          etl: {
+            title: "Bank Reviews ETL Pipeline",
+            description: "Advanced data engineering pipeline that processes customer reviews and feedback. Includes natural language processing for sentiment analysis, automated data transformation, and comprehensive business intelligence reporting.",
+            technologies: ["Apache Airflow", "Python", "DBT", "Looker Studio", "NLP Libraries"],
+            features: ["Automated ETL workflows", "Sentiment analysis", "Data quality checks", "Custom dashboards", "Performance monitoring"]
+          },
+          hotel: {
+            title: "Hotel Management System",
+            description: "Full-featured hotel management application with comprehensive booking, customer management, and billing capabilities. Designed using UML modeling principles and implemented with enterprise Java technologies.",
+            technologies: ["Java EE", "MySQL", "JSP", "Servlets", "JSTL"],
+            features: ["Reservation management", "Customer profiles", "Billing automation", "Room availability", "Reporting system"]
+          },
+          iot: {
+            title: "IoT Energy Monitoring System",
+            description: "Smart building energy monitoring solution that collects data from Arduino sensors, processes it in real-time, and provides actionable insights through comprehensive dashboards and analytics.",
+            technologies: ["Arduino", "Python", "Power BI", "MQTT", "Time Series DB"],
+            features: ["Real-time monitoring", "Energy analytics", "Predictive insights", "Alert system", "Usage optimization"]
+          }
+        };
+
+        const projectKey = this.getAttribute('data-project');
+        const project = projectData[projectKey];
+
+        if (project) {
+          const modal = document.createElement('div');
+          modal.className = 'modal';
+          modal.innerHTML = `
+            <div class="modal-content">
+              <div class="modal-header">${project.title}</div>
+              <div class="mb-4">
+                <h4 class="font-semibold text-gray-900 mb-2">Description</h4>
+                <p class="text-gray-700 mb-4">${project.description}</p>
+                
+                <h4 class="font-semibold text-gray-900 mb-2">Technologies Used</h4>
+                <div class="flex flex-wrap mb-4">
+                  ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                </div>
+                
+                <h4 class="font-semibold text-gray-900 mb-2">Key Features</h4>
+                <ul class="text-gray-700 mb-4">
+                  ${project.features.map(feature => `<li class="mb-1">• ${feature}</li>`).join('')}
+                </ul>
+              </div>
+              <button class="btn btn-primary" onclick="this.closest('.modal').remove()">
+                Close
+              </button>
+            </div>
+          `;
+
+          document.body.appendChild(modal);
+
+          // Close modal when clicking outside
+          modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+              modal.remove();
+            }
+          });
+        }
+      });
+    });
+
+    // Mobile menu toggle (if needed)
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
 </body>
 </html>
